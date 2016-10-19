@@ -1,5 +1,7 @@
 import persistent.slist;
 import persistent.set;
+import persistent.map;
+import std.typecons;
 import std.stdio;
 import std.algorithm.searching;
 
@@ -19,6 +21,9 @@ int main()
 
   PersistentSet!int set;
   auto newSet = set.add(5).add(10).add(20).add(30);
+
+  PersistentMap!(int, int) map;
+  auto newMap = map.add(tuple(3,3));
 
   return 0;
 }
