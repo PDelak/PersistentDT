@@ -28,9 +28,9 @@ struct PersistentBstTree(T)
   {
     if(!n) return new TreeNode(key);
    
-    if(key < n.key) return makeTreeNode(n.key, insert(n.left, key), n.right);
+    if(key < n.key) return makeTreeNode(n.key, insertImpl(n.left, key), n.right);
 
-    return makeTreeNode(n.key, n.left, insert(n.right, key));    
+    return makeTreeNode(n.key, n.left, insertImpl(n.right, key));    
   }
 
   TreeNode* treeRoot() { return root; }
