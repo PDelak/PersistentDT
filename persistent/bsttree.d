@@ -26,7 +26,7 @@ struct PersistentBstTree(T)
 
   private TreeNode* insertImpl(TreeNode* n, T key)
   {
-    if(!n) return new TreeNode(key);
+    if(!n) return makeTreeNode(key, null, null);
    
     if(key < n.key) return makeTreeNode(n.key, insertImpl(n.left, key), n.right);
 
